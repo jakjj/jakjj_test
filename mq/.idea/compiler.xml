@@ -6,16 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="child1" />
-        <module name="child2" />
+        <module name="config" />
         <module name="mqtest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="a" target="1.5" />
       <module name="child1" target="1.5" />
       <module name="child2" target="1.5" />
+      <module name="config" target="1.5" />
       <module name="mq" target="1.5" />
-      <module name="mqtest" target="1.8" />
+      <module name="mqtest" target="1.5" />
+      <module name="parent" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

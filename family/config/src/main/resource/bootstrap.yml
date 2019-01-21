@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: family-config
+
+#git管理配置
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jakjj/jakjj_test.git
+          search-paths: family/config-repo
+          username: jakjj
+          password: 13716147468a

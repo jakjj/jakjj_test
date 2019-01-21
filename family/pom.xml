@@ -12,6 +12,7 @@
         <module>common-parent</module>
         <module>config</module>
         <module>repository</module>
+        <module>web</module>
     </modules>
 
 

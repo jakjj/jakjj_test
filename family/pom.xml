@@ -15,6 +15,7 @@
         <module>registry</module>
         <module>business</module>
         <module>app</module>
+        <module>zuul</module>
     </modules>
 
 

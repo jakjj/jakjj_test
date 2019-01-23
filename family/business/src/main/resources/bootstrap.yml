@@ -1,18 +1,23 @@
 spring:
   application:
     name: family-business
+  cloud:
+    client:
+      ipAddress: 192.168.2.6
 
 server:
   port: 8101
 
+
 eureka:
   instance:
+    prefer-ip-address: true
+#    instanceId: ${spring.cloud.client.ipAddress}:${server.port}
+    status-page-url: http://localhost:${server.port}/swagger-ui.html
     hostname: localhost
   client:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8001/eureka/
-  #swagger
-  prefer-ip-address: true
-  instanceId: ${eureka.instance.hostname}:${server.port}
-  status-page-url: http://${eureka.instance.hostname}:${server.port}/swagger-ui.html
-  # ${server.port}为该服务的端口号
+
+swagger:
+  base-package: org.wz

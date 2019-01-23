@@ -14,3 +14,10 @@ server:
   port: 7001
 
 
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka

@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: family-zuul
+
+server:
+  port: 8501
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka/

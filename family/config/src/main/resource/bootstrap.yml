@@ -8,6 +8,6 @@ spring:
       server:
         git:
           uri: https://github.com/jakjj/jakjj_test.git
-          search-paths: family/config-repo
+          search-paths: config-repo
           username: jakjj
           password: 13716147468a

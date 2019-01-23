@@ -9,7 +9,7 @@
         <module name="app" />
         <module name="business" />
         <module name="config" />
-        <module name="regiestry" />
+        <module name="registry" />
         <module name="repository" />
       </profile>
     </annotationProcessing>

@@ -1,11 +1,10 @@
 spring:
   application:
     name: family-app
+
 server:
-  port: 8201
+  port: 8202
 eureka:
-  instance:
-    hostname: localhost
   client:
-    serviceUrl:
+    service-url:
       defaultZone: http://localhost:8001/eureka/

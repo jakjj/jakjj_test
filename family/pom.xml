@@ -14,6 +14,7 @@
         <module>repository</module>
         <module>registry</module>
         <module>business</module>
+        <module>app</module>
     </modules>
 
 

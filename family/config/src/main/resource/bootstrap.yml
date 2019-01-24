@@ -2,12 +2,23 @@ spring:
   application:
     name: family-config
 
+server:
+  port: 8080
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka/
+
 #git管理配置
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/jakjj/jakjj_test.git
-          search-paths: config-repo
-          username: jakjj
-          password: 13716147468a
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri: https://github.com/jakjj/jakjj_test.git
+#          search-paths: config-repo
+#          username: jakjj
+#          password: 13716147468a

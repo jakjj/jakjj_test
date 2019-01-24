@@ -12,7 +12,6 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableFeignClients
-@EnableSwagger2Doc
 public class BusinessApplication {
    /* @Bean
     @LoadBalanced

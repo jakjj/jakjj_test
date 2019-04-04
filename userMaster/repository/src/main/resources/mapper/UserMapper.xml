@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.wz.repository.dao.UserDao">
+    <select id="queryList" resultType="User">
+        select id,userName,password,sex,phone,createTime from(
+          select id,userName,password,sex,phone,createTime,rownum r from(
+            select * from TB_USER_WZ where isdelete = 'F'
+          )where rownum &lt;= #{end}
+        ) t where t.r &gt;#{start}
+    </select>
+
+    <update id="editUser" >
+        update TB_USER_WZ set userName = #{userName},password = #{password},sex = #{sex}, phone = #{phone}, updateTime = sysdate where id = #{id}
+    </update>
+
+    <update id="deleteUser">
+        update TB_USER_WZ set isdelete = 'T' where id = #{id}
+    </update>
+
+    <insert id="addUser">
+        insert into TB_USER_WZ (id,userName,password,sex,phone,createTime) values(#{id},#{userName},#{password},#{sex},#{phone},sysdate)
+    </insert>
+
+    <select id="queryInfo" resultType="User">
+        select id,userName,password,sex,phone,createTime from TB_USER_WZ where id = #{id}
+    </select>
+
+    <select id="count" resultType="int">
+        select count(1) count from TB_USER_WZ where isdelete = 'F'
+    </select>
+</mapper>

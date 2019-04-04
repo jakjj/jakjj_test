@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: family-repository
+#  ?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true
+  datasource:
+    url: jdbc:oracle:thin:@n198n07834.iask.in:38861:SZORCL
+    username: EXAM_RECOGN
+    password: EXAM_RECOGN
+    driver-class-name: oracle.jdbc.OracleDriver
+
+
+
+server:
+  port: 8603
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka/
+
+mybatis:
+  mapper-locations: mapper/*
+  type-aliases-package: org/wz/config/bean
+

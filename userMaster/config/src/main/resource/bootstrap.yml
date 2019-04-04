@@ -1,0 +1,73 @@
+spring:
+  application:
+    name: family-config
+#git管理配置
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/jakjj/jakjj_test/
+          search-paths: config-repo
+          username: jakjj
+          password: 13716147468a
+
+#开启重连机制
+    loadbalancer:
+      retry:
+        enabled: true
+server:
+  port: 7001
+
+
+
+#
+#zuul:
+#  retryable: true
+#  semaphore:
+#    max-semaphores: 2000
+#  ribbon-isolation-strategy: semaphore
+#zuul超时配置
+#zuul.host.socket-timeout-millis=800000
+#zuul.host.connect-timeout-millis=300000
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=1000000
+##hystrix.command.default.execution.timeout.enabled=true
+##hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds=1000000
+
+
+##ribbon.ReadTimeout=8000
+##ribbon.ConnectTimeout=2000
+
+
+##ribbon.OkToRetryOnAllOperations=true
+##ribbon.MaxAutoRetries=3
+##ribbon.MaxAutoRetriesNextServer=3
+##ribbon.eureka.enabled=true
+
+#hystrix.command.default.execution.timeout.enabled=true  这个报错 404和正常请求交替
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 200000000000
+#feign:
+#  hystrix:
+#    enabled: true
+#
+#ribbon:
+#  ReadTimeout: 80000
+#  ConnectTimeout: 50000
+#  OkToRetryOnAllOperations: true
+#  MaxAutoRetries: 3
+#  MaxAutoRetriesNextServer: 3
+#  eureka:
+#    enabled: true
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8001/eureka
